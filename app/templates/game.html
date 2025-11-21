@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}Q-Words Game - {{ game.level.name.title() }} Level{% endblock %}
+
+{% block content %}
+<div class="game-container">
+    <header class="game-header">
+        <h1>Q-Words - {{ game.level.name.title() }} Level</h1>
+        <div class="game-info" role="status" aria-live="polite" aria-label="Game status">
+            <span>Attempts: {{ game.attempts }} of {{ game.maxAttempts }}</span>
+            <span>Word Length: {{ game.wordLength }} letters</span>
+            {% if game.debugMode and game.targetWord %}
+            <span class="debug-word" aria-label="Debug mode: target word is {{ game.targetWord }}">
+                DEBUG: {{ game.targetWord }}
+            </span>
+            {% endif %}
+        </div>
+    </header>
+    
+    {% if game.gameWon %}
+    <section class="game-result win-message" role="alert" aria-labelledby="win-heading">
+        <h2 id="win-heading">🎉 Congratulations! You Won!</h2>
+        <p>You found the word in {{ game.attempts }} attempts!</p>
+        <form method="POST" action="{{ url_for('game.play_again') }}">
+            <button type="submit" class="play-again-button" aria-describedby="play-again-help">
+                Play Again
+            </button>
+            <div id="play-again-help" class="sr-only">Start a new game at the same difficulty level</div>
+        </form>
+    </section>
+    {% elif game.gameLost %}
+    <section class="game-result lose-message" role="alert" aria-labelledby="lose-heading">
+        <h2 id="lose-heading">😔 Game Over</h2>
+        <p>You've used all {{ game.maxAttempts }} attempts.</p>
+        <form method="POST" action="{{ url_for('game.play_again') }}">
+            <button type="submit" class="play-again-button" aria-describedby="try-again-help">
+                Try Again
+            </button>
+            <div id="try-again-help" class="sr-only">Start a new game at the same difficulty level</div>
+        </form>
+    </section>
+    {% else %}
+    <section class="game-input" aria-labelledby="input-heading">
+        <h2 id="input-heading" class="sr-only">Make Your Guess</h2>
+        <form method="POST" action="{{ url_for('game.submit_guess') }}" class="guess-form" aria-label="Word guess form">
+            <label for="guess-input" class="sr-only">
+                Enter your {{ game.wordLength }}-letter word guess
+            </label>
+            <input type="text" 
+                   name="guess" 
+                   id="guess-input" 
+                   maxlength="{{ game.wordLength }}" 
+                   minlength="{{ game.wordLength }}"
+                   placeholder="Enter your {{ game.wordLength }}-letter guess..."
+                   autocomplete="off"
+                   autocapitalize="characters"
+                   spellcheck="false"
+                   aria-describedby="guess-help"
+                   required>
+            <div id="guess-help" class="sr-only">
+                Enter a {{ game.wordLength }}-letter word. Only letters are allowed.
+            </div>
+            <button type="submit" id="submit-guess" aria-describedby="submit-help">
+                Submit Guess
+            </button>
+            <div id="submit-help" class="sr-only">Press Enter or click to submit your guess</div>
+        </form>
+    </section>
+    {% endif %}
+    
+    <section class="guess-history" aria-labelledby="history-heading">
+        <h2 id="history-heading">Guess History</h2>
+        {% if game.guessHistory %}
+        <div class="guesses" 
+             role="log" 
+             aria-live="polite" 
+             aria-label="Previous guesses and feedback"
+             tabindex="0"
+             aria-describedby="scroll-help">
+            {% for guess in game.guessHistory|reverse %}
+            <div class="guess-row" role="listitem">
+                <span class="guess-number" aria-label="Attempt {{ guess.attempt }}">
+                    #{{ guess.attempt }}
+                </span>
+                <span class="guess-word" aria-label="Guess {{ guess.attempt }}: {{ guess.guess }}">
+                    {{ guess.guess }}
+                </span>
+                <span class="guess-feedback" aria-label="Feedback for {{ guess.guess }}">
+                    {% for char in guess.feedback %}
+                    <span class="feedback-char feedback-{{ char }}" 
+                          aria-label="{% if char == '+' %}Correct position{% elif char == '?' %}Wrong position{% else %}Not in word{% endif %}">
+                        {{ char }}
+                    </span>
+                    {% endfor %}
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+        <div id="scroll-help" class="sr-only">Use arrow keys to scroll through guess history</div>
+        {% else %}
+        <p class="no-guesses" role="status">No guesses yet. Make your first guess!</p>
+        {% endif %}
+    </section>
+    
+    <nav class="game-actions" aria-label="Game actions">
+        <form method="POST" action="{{ url_for('game.reset_game') }}" style="display: inline;">
+            <button type="submit" class="reset-button" aria-describedby="new-game-help">
+                New Game
+            </button>
+            <div id="new-game-help" class="sr-only">End current game and return to difficulty selection</div>
+        </form>
+        <form method="POST" action="{{ url_for('game.play_again') }}" style="display: inline;">
+            <button type="submit" class="home-button" aria-describedby="new-word-help">
+                Guess New Word
+            </button>
+            <div id="new-word-help" class="sr-only">Start a new game with a different word at the same difficulty level</div>
+        </form>
+    </nav>
+</div>
+{% endblock %}

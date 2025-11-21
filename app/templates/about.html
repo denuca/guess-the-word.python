@@ -1,0 +1,390 @@
+{% extends "base.html" %}
+
+{% block title %}About Q-Words - Accessible Word Guessing Game{% endblock %}
+
+{% block content %}
+<div class="about-container">
+    <h1>About Q-Words</h1>
+    
+    <div class="about-content">
+        <section class="game-description" aria-labelledby="description-heading">
+            <h2 id="description-heading">What is Q-Words?</h2>
+            <p>Q-Words is a fully accessible word-guessing game where players attempt to discover a hidden word within a limited number of attempts. Similar to popular word games, Q-Words challenges your vocabulary and deductive reasoning skills while providing an excellent experience for all users, including those using assistive technologies.</p>
+        </section>
+        
+        <section class="how-to-play" aria-labelledby="gameplay-heading">
+            <h2 id="gameplay-heading">How to Play</h2>
+            <ol>
+                <li><strong>Choose your difficulty:</strong> Easy (4 letters), Medium (6 letters), or Hard (8 letters)</li>
+                <li><strong>Make your guess:</strong> Enter a word of the correct length</li>
+                <li><strong>Read the feedback:</strong>
+                    <ul role="list">
+                        <li><span class="feedback-demo feedback-+" aria-label="Plus symbol">+</span> Correct letter in correct position</li>
+                        <li><span class="feedback-demo feedback-?" aria-label="Question mark">?</span> Correct letter in wrong position</li>
+                        <li><span class="feedback-demo feedback-x" aria-label="X symbol">x</span> Letter not in the word</li>
+                    </ul>
+                </li>
+                <li><strong>Keep guessing:</strong> Use the feedback to make better guesses</li>
+                <li><strong>Win or lose:</strong> Find the word before running out of attempts!</li>
+            </ol>
+        </section>
+        
+        <section class="keyboard-navigation" aria-labelledby="keyboard-heading">
+            <h2 id="keyboard-heading">🎮 Keyboard Navigation Guide</h2>
+            <p>Q-Words is fully playable using only the keyboard, making it accessible to all users:</p>
+            
+            <div class="keyboard-sections">
+                <div class="keyboard-section">
+                    <h3>🏠 Home Page Navigation</h3>
+                    <dl class="keyboard-controls">
+                        <dt><kbd>Tab</kbd></dt>
+                        <dd>Move between interactive elements (links, buttons, form controls)</dd>
+                        
+                        <dt><kbd>Shift + Tab</kbd></dt>
+                        <dd>Move backwards through interactive elements</dd>
+                        
+                        <dt><kbd>Arrow Keys</kbd> <kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd></dt>
+                        <dd>Navigate between difficulty level options (Easy, Medium, Hard)</dd>
+                        
+                        <dt><kbd>Space</kbd> or <kbd>Enter</kbd></dt>
+                        <dd>Select difficulty level or activate buttons</dd>
+                        
+                        <dt><kbd>Enter</kbd></dt>
+                        <dd>Start game with selected difficulty level</dd>
+                    </dl>
+                </div>
+                
+                <div class="keyboard-section">
+                    <h3>🎯 Game Page Controls</h3>
+                    <dl class="keyboard-controls">
+                        <dt><kbd>Tab</kbd></dt>
+                        <dd>Navigate to guess input field and action buttons</dd>
+                        
+                        <dt><kbd>A-Z</kbd> Letters</dt>
+                        <dd>Type your word guess (automatically converted to uppercase)</dd>
+                        
+                        <dt><kbd>Backspace</kbd></dt>
+                        <dd>Delete letters from your guess</dd>
+                        
+                        <dt><kbd>Enter</kbd></dt>
+                        <dd>Submit your guess for evaluation</dd>
+                        
+                        <dt><kbd>Escape</kbd></dt>
+                        <dd>Confirm starting a new game (with confirmation dialog)</dd>
+                    </dl>
+                </div>
+                
+                <div class="keyboard-section">
+                    <h3>🔄 Game Actions</h3>
+                    <dl class="keyboard-controls">
+                        <dt><kbd>Tab</kbd> to "Play Again"</dt>
+                        <dd>Start a new game at the same difficulty level</dd>
+                        
+                        <dt><kbd>Tab</kbd> to "New Game"</dt>
+                        <dd>Return to difficulty selection for a fresh start</dd>
+                        
+                        <dt><kbd>Tab</kbd> to "Back to Home"</dt>
+                        <dd>Return to the main menu</dd>
+                    </dl>
+                </div>
+            </div>
+            
+            <div class="accessibility-tips">
+                <h3>💡 Accessibility Tips</h3>
+                <ul role="list">
+                    <li><strong>Screen Readers:</strong> All game feedback is announced, including guess results and game status</li>
+                    <li><strong>Focus Indicators:</strong> Clear blue outlines show which element has keyboard focus</li>
+                    <li><strong>Skip Links:</strong> Press <kbd>Tab</kbd> on any page to access "Skip to main content" link</li>
+                    <li><strong>Live Updates:</strong> Game status and feedback are automatically announced to screen readers</li>
+                    <li><strong>Error Messages:</strong> Input validation errors are clearly announced and explained</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="difficulty-levels" aria-labelledby="difficulty-heading">
+            <h2 id="difficulty-heading">Difficulty Levels</h2>
+            <div class="difficulty-grid" role="list">
+                <div class="difficulty-card" role="listitem">
+                    <h3>Easy</h3>
+                    <p>4-letter words<br>8 attempts</p>
+                    <p>Perfect for beginners and quick games</p>
+                </div>
+                <div class="difficulty-card" role="listitem">
+                    <h3>Medium</h3>
+                    <p>6-letter words<br>6 attempts</p>
+                    <p>Balanced challenge for most players</p>
+                </div>
+                <div class="difficulty-card" role="listitem">
+                    <h3>Hard</h3>
+                    <p>8-letter words<br>4 attempts</p>
+                    <p>For word game experts seeking a challenge</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="accessibility-features" aria-labelledby="accessibility-heading">
+            <h2 id="accessibility-heading">♿ Accessibility Features</h2>
+            <div class="accessibility-grid">
+                <div class="accessibility-feature">
+                    <h3>🎹 Full Keyboard Support</h3>
+                    <p>Play the entire game using only the keyboard - no mouse required!</p>
+                </div>
+                <div class="accessibility-feature">
+                    <h3>🔊 Screen Reader Compatible</h3>
+                    <p>Works with NVDA, JAWS, VoiceOver, TalkBack, and other screen readers</p>
+                </div>
+                <div class="accessibility-feature">
+                    <h3>📱 Mobile Responsive</h3>
+                    <p>Optimized for touch devices with large tap targets and responsive design</p>
+                </div>
+                <div class="accessibility-feature">
+                    <h3>🎨 High Contrast</h3>
+                    <p>4.5:1 minimum contrast ratio meets WCAG AA standards</p>
+                </div>
+                <div class="accessibility-feature">
+                    <h3>🔍 Focus Management</h3>
+                    <p>Clear focus indicators and logical tab order throughout the game</p>
+                </div>
+                <div class="accessibility-feature">
+                    <h3>📢 Live Announcements</h3>
+                    <p>Game feedback and status updates are announced to assistive technologies</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="technical-info" aria-labelledby="technical-heading">
+            <h2 id="technical-heading">Technical Details</h2>
+            <p>Q-Words was originally built in Java Spring Boot and has been successfully migrated to Python Flask, maintaining 100% functional equivalence while improving performance, maintainability, and accessibility.</p>
+            
+            <h3>Features:</h3>
+            <ul role="list">
+                <li>WCAG 2.1 AA compliant accessibility</li>
+                <li>Responsive web design for all devices</li>
+                <li>Session-based game state management</li>
+                <li>Real-time input validation with screen reader feedback</li>
+                <li>Comprehensive word database</li>
+                <li>Performance optimized for fast gameplay</li>
+                <li>Keyboard-only navigation support</li>
+                <li>Mobile screen reader compatibility</li>
+            </ul>
+        </section>
+        
+        <div class="play-now">
+            <a href="{{ url_for('home.index') }}" class="play-button" aria-describedby="play-button-help">
+                Start Playing Now!
+            </a>
+            <div id="play-button-help" class="sr-only">Navigate to the home page to select difficulty and start playing</div>
+        </div>
+    </div>
+</div>
+
+<style>
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.about-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #dee2e6;
+}
+
+.about-content section {
+    margin-bottom: 3rem;
+}
+
+.about-content h2 {
+    color: #1a252f;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.about-content h3 {
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.feedback-demo {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: bold;
+    color: white;
+    margin-right: 0.5rem;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.keyboard-sections {
+    display: grid;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.keyboard-section {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #0066cc;
+}
+
+.keyboard-controls {
+    margin: 1rem 0;
+}
+
+.keyboard-controls dt {
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #1a252f;
+}
+
+.keyboard-controls dd {
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    color: #495057;
+}
+
+kbd {
+    background: #e9ecef;
+    border: 1px solid #adb5bd;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    color: #495057;
+    display: inline-block;
+    font-size: 0.85em;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    white-space: nowrap;
+}
+
+.accessibility-tips {
+    background: #e7f3ff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #b3d9ff;
+    margin-top: 1.5rem;
+}
+
+.accessibility-tips h3 {
+    color: #0066cc;
+    margin-bottom: 1rem;
+}
+
+.difficulty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.difficulty-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #e9ecef;
+    transition: border-color 0.3s ease;
+}
+
+.difficulty-card:hover,
+.difficulty-card:focus-within {
+    border-color: #0066cc;
+}
+
+.difficulty-card h3 {
+    color: #1a252f;
+    margin-bottom: 0.5rem;
+}
+
+.accessibility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.accessibility-feature {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    text-align: center;
+}
+
+.accessibility-feature h3 {
+    color: #1a252f;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.play-button {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    min-height: 44px;
+    min-width: 44px;
+}
+
+.play-button:hover,
+.play-button:focus {
+    background: #218838;
+    transform: translateY(-1px);
+    text-decoration: underline;
+}
+
+.play-now {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 1rem;
+    }
+    
+    .about-content {
+        padding: 1.5rem;
+    }
+    
+    .keyboard-sections {
+        grid-template-columns: 1fr;
+    }
+    
+    .difficulty-grid,
+    .accessibility-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .keyboard-section {
+        padding: 1rem;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .keyboard-section {
+        border-left-width: 6px;
+    }
+    
+    .accessibility-tips {
+        border-width: 2px;
+    }
+}
+</style>
+{% endblock %}

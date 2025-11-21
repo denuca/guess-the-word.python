@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q-Words AJAX Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-result { margin: 10px 0; padding: 10px; border: 1px solid #ccc; }
+        .success { background: #d4edda; }
+        .error { background: #f8d7da; }
+    </style>
+</head>
+<body>
+    <h1>Q-Words AJAX Test</h1>
+    <div id="results"></div>
+    
+    <script>
+    async function testAjax() {
+        const results = document.getElementById('results');
+        
+        try {
+            // Start a game
+            results.innerHTML += '<div class="test-result">Starting game...</div>';
+            const startResponse = await fetch('/game/start', {
+                method: 'POST',
+                body: new FormData(Object.assign(document.createElement('form'), {
+                    innerHTML: '<input name="level" value="MEDIUM">'
+                }))
+            });
+            
+            if (startResponse.redirected) {
+                results.innerHTML += '<div class="test-result success">✅ Game started successfully</div>';
+            }
+            
+            // Submit a guess via AJAX
+            results.innerHTML += '<div class="test-result">Submitting guess "ANIMAL"...</div>';
+            const formData = new FormData();
+            formData.append('guess', 'ANIMAL');
+            
+            const guessResponse = await fetch('/game/guess', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            });
+            
+            const data = await guessResponse.json();
+            results.innerHTML += `<div class="test-result success">
+                ✅ AJAX Response:<br>
+                Guess: ${data.guess}<br>
+                Feedback: ${data.feedback}<br>
+                Attempts: ${data.attempts}/${data.maxAttempts}<br>
+                Won: ${data.won}
+            </div>`;
+            
+        } catch (error) {
+            results.innerHTML += `<div class="test-result error">❌ Error: ${error.message}</div>`;
+        }
+    }
+    
+    // Run test when page loads
+    testAjax();
+    </script>
+</body>
+</html>

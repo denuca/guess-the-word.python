@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-Words Debug Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .game-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #dee2e6;
+        }
+        
+        .game-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e9ecef;
+            background: #ffffff;
+        }
+        
+        .game-header h1 {
+            color: #000000;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: none;
+        }
+        
+        .game-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-weight: 600;
+            color: #000000;
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .debug-word {
+            color: #dc3545 !important;
+            font-weight: bold;
+            background: #f8d7da;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .guess-form {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        #guess-input {
+            padding: 1rem;
+            font-size: 1.2rem;
+            border: 2px solid #ced4da;
+            border-radius: 8px;
+            text-align: center;
+            text-transform: uppercase;
+            min-width: 200px;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+        }
+        
+        #submit-guess {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            min-height: 44px;
+        }
+        
+        .guesses {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .guess-row {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            min-width: 300px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid #dee2e6;
+        }
+        
+        .guess-word {
+            font-weight: bold;
+            font-size: 1.2rem;
+            min-width: 100px;
+            text-align: center;
+            letter-spacing: 0.1em;
+        }
+        
+        .guess-feedback {
+            display: flex;
+            gap: 0.25rem;
+        }
+        
+        .feedback-char {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: white;
+            font-size: 1rem;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .feedback-\+ {
+            background: #28a745;
+        }
+        
+        .feedback-\? {
+            background: #ffc107;
+            color: #212529;
+        }
+        
+        .feedback-x {
+            background: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>Q-Words - Medium Level</h1>
+            <div class="game-info" role="status" aria-live="polite" aria-label="Game status">
+                <span>Attempts: 2 of 6</span>
+                <span>Word Length: 6 letters</span>
+                <span class="debug-word" aria-label="Debug mode: target word is PYTHON">
+                    DEBUG: PYTHON
+                </span>
+            </div>
+        </header>
+        
+        <section class="game-input">
+            <form class="guess-form" onsubmit="testSubmit(event)">
+                <input type="text" 
+                       name="guess" 
+                       id="guess-input" 
+                       maxlength="6" 
+                       placeholder="Enter your 6-letter guess..."
+                       autocomplete="off"
+                       required>
+                <button type="submit" id="submit-guess">Submit Guess</button>
+            </form>
+        </section>
+        
+        <section class="guess-history">
+            <h2>Guess History</h2>
+            <div class="guesses">
+                <div class="guess-row">
+                    <span class="guess-word">ANIMAL</span>
+                    <span class="guess-feedback">
+                        <span class="feedback-char feedback-x">x</span>
+                        <span class="feedback-char feedback-?">?</span>
+                        <span class="feedback-char feedback-x">x</span>
+                        <span class="feedback-char feedback-x">x</span>
+                        <span class="feedback-char feedback-x">x</span>
+                        <span class="feedback-char feedback-x">x</span>
+                    </span>
+                </div>
+                <div class="guess-row">
+                    <span class="guess-word">PYTHON</span>
+                    <span class="guess-feedback">
+                        <span class="feedback-char feedback-+">+</span>
+                        <span class="feedback-char feedback-+">+</span>
+                        <span class="feedback-char feedback-+">+</span>
+                        <span class="feedback-char feedback-+">+</span>
+                        <span class="feedback-char feedback-+">+</span>
+                        <span class="feedback-char feedback-+">+</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        function testSubmit(event) {
+            event.preventDefault();
+            const input = document.getElementById('guess-input');
+            const guess = input.value.trim().toUpperCase();
+            
+            console.log('Test submit called with guess:', guess);
+            
+            if (!guess) {
+                alert('Please enter a guess');
+                return;
+            }
+            
+            // Simulate adding a guess
+            const guessHistory = document.querySelector('.guesses');
+            const guessRow = document.createElement('div');
+            guessRow.className = 'guess-row';
+            
+            guessRow.innerHTML = `
+                <span class="guess-word">${guess}</span>
+                <span class="guess-feedback">
+                    <span class="feedback-char feedback-x">x</span>
+                    <span class="feedback-char feedback-?">?</span>
+                    <span class="feedback-char feedback-+">+</span>
+                    <span class="feedback-char feedback-x">x</span>
+                    <span class="feedback-char feedback-x">x</span>
+                    <span class="feedback-char feedback-x">x</span>
+                </span>
+            `;
+            
+            guessHistory.appendChild(guessRow);
+            input.value = '';
+            
+            console.log('Test guess added successfully');
+        }
+        
+        // Test input validation
+        const guessInput = document.getElementById('guess-input');
+        if (guessInput) {
+            guessInput.addEventListener('input', function() {
+                this.value = this.value.toUpperCase();
+            });
+        }
+    </script>
+</body>
+</html>

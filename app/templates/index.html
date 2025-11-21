@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Q-Words - Accessible Word Guessing Game{% endblock %}
+
+{% block content %}
+<div class="home-container">
+    <h1>Welcome to Q-Words!</h1>
+    <p>An accessible word-guessing game where you have limited attempts to find the hidden word.</p>
+    
+    <section class="game-setup" aria-labelledby="difficulty-heading">
+        <h2 id="difficulty-heading">Choose Your Difficulty</h2>
+        <form method="POST" action="{{ url_for('game.start_game') }}" class="level-form" aria-label="Game difficulty selection">
+            <fieldset class="level-options">
+                <legend class="sr-only">Select difficulty level</legend>
+                {% for level in levels %}
+                <div class="level-option">
+                    <input type="radio" 
+                           id="level-{{ level.name.lower() }}" 
+                           name="level" 
+                           value="{{ level.name }}" 
+                           {% if level.name == 'MEDIUM' %}checked{% endif %}
+                           aria-describedby="level-{{ level.name.lower() }}-desc">
+                    <label for="level-{{ level.name.lower() }}">
+                        <strong>{{ level.name.title() }}</strong>
+                        <span id="level-{{ level.name.lower() }}-desc" class="level-description">
+                            {{ level.word_length }} letters, {{ level.max_attempts }} attempts
+                        </span>
+                    </label>
+                </div>
+                {% endfor %}
+            </fieldset>
+            
+            <button type="submit" class="start-button" id="start-game" aria-describedby="start-game-help">
+                Start Game
+            </button>
+            <div id="start-game-help" class="sr-only">Press Enter or Space to start the game with selected difficulty</div>
+        </form>
+    </section>
+    
+    <section class="game-rules" aria-labelledby="rules-heading">
+        <h2 id="rules-heading">How to Play</h2>
+        <ul role="list">
+            <li><strong aria-label="Plus symbol">+</strong> = Correct letter in correct position</li>
+            <li><strong aria-label="Question mark">?</strong> = Correct letter in wrong position</li>
+            <li><strong aria-label="X symbol">x</strong> = Letter not in the word</li>
+        </ul>
+        <p class="keyboard-help">
+            <strong>Keyboard Navigation:</strong> Use Tab to navigate, Enter/Space to activate buttons, 
+            Arrow keys to select difficulty levels.
+        </p>
+    </section>
+</div>
+{% endblock %}
