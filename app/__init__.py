@@ -1,5 +1,5 @@
 """
-Q-Words Game Application
+Guess The Word Game Application
 A word-guessing game similar to Wordle, migrated from Java Spring Boot to Python Flask.
 """
 

@@ -1,5 +1,5 @@
 """
-Q-Words Game Repositories
+Guess The Word Game Repositories
 Data access layer for word management and storage.
 """
 

@@ -1,5 +1,5 @@
 """
-Word model with guess evaluation logic for Q-Words game.
+Word model with guess evaluation logic for Guess The Word game.
 
 This module contains the Word class which represents a target word in the game
 and provides methods for evaluating player guesses against it. The evaluation
@@ -23,7 +23,7 @@ from typing import List, Dict, Any
 
 class Word:
     """
-    Represents a target word in the Q-Words game with guess evaluation capabilities.
+    Represents a target word in the Guess The Word game with guess evaluation capabilities.
     
     This class encapsulates a target word and provides methods to evaluate player
     guesses against it, returning feedback in the form of symbols indicating

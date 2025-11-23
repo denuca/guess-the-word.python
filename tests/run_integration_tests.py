@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Integration test runner for Q-Words Python migration
+Integration test runner for Guess The Word Python migration
 Tests HTTP endpoints, session management, and performance
 """
 
@@ -16,7 +16,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 def run_integration_tests():
     """Run all integration test suites"""
     
-    print("🧪 Q-Words Integration Test Suite")
+    print("🧪 Guess The Word Integration Test Suite")
     print("=" * 50)
     
     # Test suites to run

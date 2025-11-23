@@ -1,8 +1,8 @@
-# Q-Words Accessibility Compliance Report
+# Guess The Word Accessibility Compliance Report
 
 ## 🌟 WCAG 2.1 AA Compliance Achieved
 
-The Q-Words game has been fully updated to meet WCAG 2.1 AA accessibility standards and provides an excellent experience for all users, including those using assistive technologies.
+The Guess The Word game has been fully updated to meet WCAG 2.1 AA accessibility standards and provides an excellent experience for all users, including those using assistive technologies.
 
 ## ✅ Accessibility Features Implemented
 
@@ -228,7 +228,7 @@ The accessibility enhancements have minimal performance impact:
 
 ## 🏆 Certification Ready
 
-The Q-Words game is now ready for:
+The Guess The Word game is now ready for:
 - **Section 508 compliance** (US Federal accessibility)
 - **EN 301 549 compliance** (European accessibility standard)
 - **AODA compliance** (Accessibility for Ontarians with Disabilities Act)

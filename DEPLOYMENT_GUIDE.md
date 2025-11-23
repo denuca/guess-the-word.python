@@ -1,8 +1,8 @@
-# Q-Words Python Deployment Guide
+# Guess The Word Python Deployment Guide
 
 ## 🚀 Production-Ready Deployment
 
-This guide covers deploying the Q-Words Python application following industry best practices.
+This guide covers deploying the Guess The Word Python application following industry best practices.
 
 ## 📋 Prerequisites
 
@@ -71,7 +71,7 @@ python app.py
 
 **Expected Output:**
 ```
-🎮 Starting Q-Words Game Server...
+🎮 Starting Guess The Word Game Server...
 📍 Environment: development
 🌐 Port: 5000
 🔧 Debug: True
@@ -82,7 +82,7 @@ python app.py
 
 ### 5. Verify Installation
 - Open browser to `http://localhost:5000`
-- You should see the Q-Words home page
+- You should see the Guess The Word home page
 - Try starting a game to verify functionality
 
 ## 🌐 Production Deployment
@@ -483,6 +483,6 @@ sudo tail -f /var/log/nginx/error.log
 - Set up auto-scaling
 - Monitor and optimize database queries
 
-By the lexical archives, your Q-Words application is now ready for production deployment! 🚀
+By the lexical archives, your Guess The Word application is now ready for production deployment! 🚀
 
 May your vowels be plentiful and your consonants well-placed! ✨

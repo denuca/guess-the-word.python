@@ -1,4 +1,4 @@
 """
-Q-Words Application Configuration
+Guess The Word Application Configuration
 Environment-specific settings and configuration management.
 """

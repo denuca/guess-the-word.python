@@ -1,4 +1,4 @@
-# Q-Words Proxy Deployment Guide
+# Guess The Word Proxy Deployment Guide
 
 ## Issue: CloudFront Proxy URL Problems
 

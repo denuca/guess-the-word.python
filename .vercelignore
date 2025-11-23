@@ -1,4 +1,4 @@
-# Vercel ignore file for Q-Words Python application
+# Vercel ignore file for Guess The Word Python application
 
 # Virtual environment
 venv/

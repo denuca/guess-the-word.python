@@ -1,8 +1,8 @@
 #!/bin/bash
-# Q-Words Proxy Deployment Script
+# Guess The Word Proxy Deployment Script
 # Configures environment for CloudFront proxy deployment
 
-echo "🚀 Q-Words Proxy Deployment Setup"
+echo "🚀 Guess The Word Proxy Deployment Setup"
 echo "=================================="
 
 # Set proxy environment variables

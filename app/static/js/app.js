@@ -1,4 +1,4 @@
-// Q-Words Game - Accessible JavaScript
+// Guess The Word Game - Accessible JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize accessibility features

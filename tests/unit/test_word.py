@@ -1,5 +1,5 @@
 """
-Unit tests for Word model in Q-Words application.
+Unit tests for Word model in Guess The Word application.
 
 This module provides comprehensive testing for the Word class, which is the core
 component responsible for word validation, guess evaluation, and feedback generation.
@@ -13,7 +13,7 @@ The Word class implements the game logic for:
 Test Coverage: 100% - All methods and edge cases covered
 WCAG Compliance: Tests ensure feedback symbols work with screen readers
 
-Author: Q-Words Development Team
+Author: Guess The Word Development Team
 Last Updated: 2024-11-17
 """
 

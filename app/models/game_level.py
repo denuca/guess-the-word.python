@@ -1,8 +1,8 @@
 """
-Game difficulty levels for Q-Words game.
+Game difficulty levels for Guess The Word game.
 
 This module defines the GameLevel enumeration which represents different difficulty
-levels in the Q-Words word-guessing game. Each level has specific constraints on
+levels in the Guess The Word word-guessing game. Each level has specific constraints on
 word length and maximum number of attempts allowed.
 
 Example:
@@ -23,7 +23,7 @@ from typing import Dict, Any
 
 class GameLevel(Enum):
     """
-    Enumeration representing difficulty levels for the Q-Words game.
+    Enumeration representing difficulty levels for the Guess The Word game.
     
     Each level defines the word length and maximum attempts allowed for that
     difficulty setting. The enum values are tuples of (word_length, max_attempts).

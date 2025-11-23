@@ -1,5 +1,5 @@
 """
-Home controller for Q-Words application.
+Home controller for Guess The Word application.
 Handles the main landing page and navigation.
 """
 
@@ -18,5 +18,5 @@ def index():
 
 @home_bp.route('/about')
 def about():
-    """Display information about the Q-Words game."""
+    """Display information about the Guess The Word game."""
     return render_template('about.html')

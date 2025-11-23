@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Q-Words Game Application Entry Point
+Guess The Word Game Application Entry Point
 
-This is the main entry point for the Q-Words word-guessing game application.
+This is the main entry point for the Guess The Word word-guessing game application.
 It creates and configures the Flask application instance and starts the
 development server when run directly.
 
@@ -73,7 +73,7 @@ def print_startup_info(config_name: str, port: int, debug: bool) -> None:
         port (int): Port number the server will listen on
         debug (bool): Whether debug mode is enabled
     """
-    print("🎮 Starting Q-Words Game Server...")
+    print("🎮 Starting Guess The Word Game Server...")
     print(f"📍 Environment: {config_name}")
     print(f"🌐 Port: {port}")
     print(f"🔧 Debug: {debug}")

@@ -1,5 +1,5 @@
 """
-Vercel serverless function entry point for Q-Words application.
+Vercel serverless function entry point for Guess The Word application.
 
 This module provides the WSGI application interface required by Vercel
 for deploying Flask applications as serverless functions.

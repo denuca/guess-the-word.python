@@ -1,5 +1,5 @@
 """
-Configuration settings for Q-Words application.
+Configuration settings for Guess The Word application.
 Supports multiple environments: development, testing, production.
 """
 

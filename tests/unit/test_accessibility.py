@@ -1,5 +1,5 @@
 """
-Unit tests for accessibility features in Q-Words application.
+Unit tests for accessibility features in Guess The Word application.
 
 This module tests WCAG 2.1 AA compliance features including:
 - ARIA labels and roles
@@ -281,7 +281,7 @@ class TestAccessibilityFeatures(unittest.TestCase):
         
         # Check for descriptive title
         self.assertIn(b'<title>', response.data)
-        self.assertIn(b'Q-Words', response.data)
+        self.assertIn(b'Guess The Word', response.data)
         self.assertIn(b'Accessible', response.data)
 
 

@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Q-Words Vercel Deployment Script
+# Guess The Word Vercel Deployment Script
 # Automates the deployment process to Vercel
 
 set -e  # Exit on any error
 
-echo "🚀 Q-Words Vercel Deployment Script"
+echo "🚀 Guess The Word Vercel Deployment Script"
 echo "===================================="
 
 # Check if Vercel CLI is installed
@@ -76,4 +76,4 @@ echo "  vercel logs           - View deployment logs"
 echo "  vercel domains        - Manage custom domains"
 echo "  vercel env            - Manage environment variables"
 echo ""
-echo "✨ Your accessible Q-Words game is now live!"
+echo "✨ Your accessible Guess The Word game is now live!"

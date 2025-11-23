@@ -1,5 +1,5 @@
 """
-Q-Words Game Models
+Guess The Word Game Models
 Contains game logic, data structures, and business rules.
 """
 

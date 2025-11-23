@@ -1,5 +1,5 @@
 """
-Local file-based word repository for Q-Words game.
+Local file-based word repository for Guess The Word game.
 
 This module provides the LocalWordRepository class which manages word data
 loaded from local text files organized by difficulty level. It serves as

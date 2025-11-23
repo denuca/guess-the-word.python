@@ -1,1 +1,1 @@
-# Test package for Q-Words Python migration
+# Test package for Guess The Word Python migration

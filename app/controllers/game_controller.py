@@ -1,5 +1,5 @@
 """
-Game controller for Q-Words application.
+Game controller for Guess The Word application.
 
 This module handles all game-related HTTP endpoints including:
 - Game initialization and level selection

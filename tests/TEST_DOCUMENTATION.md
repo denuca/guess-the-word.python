@@ -1,8 +1,8 @@
-# Q-Words Test Suite Documentation
+# Guess The Word Test Suite Documentation
 
 ## 📋 Overview
 
-This document provides comprehensive documentation for the Q-Words test suite, covering unit tests, integration tests, accessibility tests, and performance tests. The test suite ensures code quality, functionality, and accessibility compliance.
+This document provides comprehensive documentation for the Guess The Word test suite, covering unit tests, integration tests, accessibility tests, and performance tests. The test suite ensures code quality, functionality, and accessibility compliance.
 
 ## 🎯 Test Coverage Goals
 
@@ -415,4 +415,4 @@ jobs:
 
 ---
 
-*This documentation is maintained by the Q-Words development team and updated with each release to ensure accuracy and completeness.*
+*This documentation is maintained by the Guess The Word development team and updated with each release to ensure accuracy and completeness.*

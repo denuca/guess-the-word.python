@@ -1,4 +1,4 @@
-# Q-Words Game - Python Flask Application
+# Guess The Word Game - Python Flask Application
 
 A word-guessing game similar to Wordle, successfully migrated from Java Spring Boot to Python Flask following industry best practices.
 
@@ -67,7 +67,7 @@ python/                     # Python implementation root
 
 6. **Access Application**
    - Open browser to `http://localhost:5000`
-   - Start playing Q-Words! 🎯
+   - Start playing Guess The Word! 🎯
 
 ### Production Deployment
 
@@ -150,7 +150,7 @@ gcloud run deploy --source .
 
 ### Comprehensive Test Suite
 
-Q-Words includes a comprehensive test suite covering unit tests, integration tests, accessibility compliance, and performance benchmarks.
+Guess The Word includes a comprehensive test suite covering unit tests, integration tests, accessibility compliance, and performance benchmarks.
 
 ```bash
 # Install dev dependencies
@@ -199,7 +199,7 @@ python -m pytest tests/unit/test_accessibility.py -v --tb=short
 
 ## 🌟 Accessibility & WCAG Compliance
 
-Q-Words is fully compliant with **WCAG 2.1 AA standards** and provides an excellent experience for all users.
+Guess The Word is fully compliant with **WCAG 2.1 AA standards** and provides an excellent experience for all users.
 
 ### ♿ Accessibility Features
 

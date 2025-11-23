@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Comprehensive test runner for Q-Words Python migration
+Comprehensive test runner for Guess The Word Python migration
 Ensures 100% code coverage and functional equivalence with Java
 """
 

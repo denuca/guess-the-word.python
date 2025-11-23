@@ -1,5 +1,5 @@
 #!/bin/bash
-# Start Q-Words with proxy configuration
+# Start Guess The Word with proxy configuration
 
 cd "$(dirname "$0")"
 source venv/bin/activate
@@ -9,7 +9,7 @@ export PREFERRED_URL_SCHEME=https
 export FLASK_ENV=production
 export SECRET_KEY=${SECRET_KEY:-dev-secret-key}
 
-echo "🚀 Starting Q-Words with proxy configuration..."
+echo "🚀 Starting Guess The Word with proxy configuration..."
 echo "   APPLICATION_ROOT: $APPLICATION_ROOT"
 echo "   PREFERRED_URL_SCHEME: $PREFERRED_URL_SCHEME"
 echo ""

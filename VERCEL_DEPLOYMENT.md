@@ -1,8 +1,8 @@
-# Q-Words Vercel Deployment Guide
+# Guess The Word Vercel Deployment Guide
 
 ## 🚀 Deploy to Vercel
 
-Deploy the Q-Words accessible word-guessing game to Vercel in minutes with serverless functions.
+Deploy the Guess The Word accessible word-guessing game to Vercel in minutes with serverless functions.
 
 ### Prerequisites
 
@@ -42,7 +42,7 @@ Deploy the Q-Words accessible word-guessing game to Vercel in minutes with serve
 1. **Push to Git repository**:
    ```bash
    git add .
-   git commit -m "Add Q-Words Flask app"
+   git commit -m "Add Guess The Word Flask app"
    git push origin main
    ```
 
@@ -293,7 +293,7 @@ npx lighthouse https://your-app.vercel.app --view
 
 - **Vercel Documentation**: [vercel.com/docs](https://vercel.com/docs)
 - **Flask on Vercel**: [vercel.com/guides/using-flask-with-vercel](https://vercel.com/guides/using-flask-with-vercel)
-- **Q-Words Issues**: Create issue in project repository
+- **Guess The Word Issues**: Create issue in project repository
 
 ---
 

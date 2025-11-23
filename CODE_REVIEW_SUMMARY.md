@@ -1,4 +1,4 @@
-# Q-Words Python Code Review & Cleanup Summary
+# Guess The Word Python Code Review & Cleanup Summary
 
 ## 🔍 Code Review Completed
 
@@ -137,7 +137,7 @@ python app.py
 
 ## ✨ Result
 
-The Q-Words Python application now features:
+The Guess The Word Python application now features:
 - **Clean, well-documented codebase** with comprehensive docstrings
 - **Professional debug mode** for development efficiency
 - **Removed unused artifacts** for better maintainability
