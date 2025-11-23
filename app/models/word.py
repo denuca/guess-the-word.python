@@ -17,7 +17,7 @@ Feedback Legend:
     '?': Correct letter in wrong position (yellow in Wordle)  
     'x': Letter not in the target word (gray in Wordle)
 """
-
+from curses.ascii import isspace
 from typing import List, Dict, Any
 
 
@@ -60,6 +60,8 @@ class Word:
         """
         if not word:
             raise ValueError("Word cannot be empty")
+        if word.isspace():
+            raise ValueError("Word cannot contain spaces only")
         self.word = word.upper()
         self.length = len(self.word)
     
@@ -141,6 +143,8 @@ class Word:
             >>> word.is_correct_guess("HELP")
             False
         """
+        if guess is None:
+            return False
         return guess.upper() == self.word
     
     def __str__(self) -> str:

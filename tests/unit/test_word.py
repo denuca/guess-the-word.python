@@ -188,9 +188,9 @@ class TestGuessEvaluation(unittest.TestCase):
         Ensures algorithm correctly handles target words with repeated letters.
         """
         word_with_duplicates = Word("SPEED")
-        feedback = word_with_duplicates.evaluate_guess("ERASE")
-        # E in wrong position, R not in word, A not in word, S wrong position, E correct position
-        self.assertEqual(feedback, "?xx?+")
+        feedback = word_with_duplicates.evaluate_guess("ERAES")
+        # E in wrong position, R not in word, A not in word, E correct position, S wrong position
+        self.assertEqual(feedback, "?xx+?")
     
     def test_evaluate_guess_mixed_feedback_complex(self):
         """
@@ -237,9 +237,9 @@ class TestGuessEvaluation(unittest.TestCase):
         
         Ensures robust handling of invalid input characters.
         """
-        feedback = self.word_hello.evaluate_guess("HE!!O")
+        feedback = self.word_hello.evaluate_guess("HE!O!")
         # H and E match, special chars treated as non-matches, O wrong position
-        self.assertEqual(feedback, "++xx?")
+        self.assertEqual(feedback, "++x?x")
 
 
 class TestCorrectGuessDetection(unittest.TestCase):
