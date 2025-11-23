@@ -4,8 +4,8 @@ import sys
 import random
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../..'))
 
-from models.game_level import GameLevel
-from repositories.local_word_repository import LocalWordRepository
+from app.models.game_level import GameLevel
+from app.repositories.local_word_repository import LocalWordRepository
 
 
 class TestWordSelectionIntegration(unittest.TestCase):

@@ -10,9 +10,21 @@ setup(
         'Jinja2', # Move Pillow to core lib
         'python-dotenv',
         'gunicorn',
-        'pytest',
         'werkzeug',
         'boto3',
-        'botocore'
+        'botocore',
+        # Testing
+        'pytest',
+        'pytest-cov',
+        'pytest-flask',
+        'pytest-mock',
+        # Code Quality
+        'black',
+        'flake8',
+        'mypy',
+        'isort',
+        # Development Tools
+        'pre-commit',
+        'python-dotenv',
     ],
 )

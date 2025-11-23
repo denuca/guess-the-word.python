@@ -4,8 +4,8 @@ import os
 from unittest.mock import patch, MagicMock
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../..'))
 
-from mock_flask_app import create_test_app
-from repositories.local_word_repository import LocalWordRepository
+from app import create_test_app
+from app.repositories.local_word_repository import LocalWordRepository
 
 
 @pytest.fixture
