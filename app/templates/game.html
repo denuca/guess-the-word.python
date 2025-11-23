@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}Q-Words Game - {{ game.level.name.title() }} Level{% endblock %}
+{% block title %}Guess The Word Game - {{ game.level.name.title() }} Level{% endblock %}
 
 {% block content %}
 <div class="game-container">
     <header class="game-header">
-        <h1>Q-Words - {{ game.level.name.title() }} Level</h1>
+        <h1>Guess The Word - {{ game.level.name.title() }} Level</h1>
         <div class="game-info" role="status" aria-live="polite" aria-label="Game status">
             <span>Attempts: {{ game.attempts }} of {{ game.maxAttempts }}</span>
             <span>Word Length: {{ game.wordLength }} letters</span>
